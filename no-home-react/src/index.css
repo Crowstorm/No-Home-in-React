@@ -9,6 +9,18 @@ body {
 
 .interface{
   border: 1px solid red;
-  width: 30%;
+  width: 29%;
   height: 100vh;
+  display: inline-block;
+  
+}
+
+
+/* Levels */
+
+.levels{
+  float: right;
+  width: 70%;
+  height: 100vh;
+  display: inline-block;
 }
