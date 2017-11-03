@@ -8,10 +8,11 @@ body {
 /* interface */
 
 .interface{
-  border: 1px solid red;
-  width: 29%;
+  width: 14%;
   height: 100vh;
-  display: inline-block;
+  float: left;
+  outline: 2px solid rgba(190, 191, 193, 0.77);
+  border: 3px solid rgba(49, 55, 58, 0.91);
   
 }
 
@@ -20,7 +21,7 @@ body {
 
 .levels{
   float: right;
-  width: 70%;
+  width: 85%;
   height: 100vh;
   display: inline-block;
 }
