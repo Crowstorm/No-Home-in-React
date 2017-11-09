@@ -7,8 +7,8 @@ class LevelRenderer extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            level: "second",
-            sublevel: "prisonEntrance"
+            level: "LevelTwo",
+            sublevel: "PrisonEntrance"
         }
     }
     render(){
