@@ -4,8 +4,8 @@ import PrisonEntrance from './subscreens/entrance'
 class LevelTwo extends React.Component{
 
     render(){
-        console.log(this.props);
-        console.log(this.props.level);
+        // console.log(this.props);
+        // console.log(this.props.level);
         return(
             <div className='levels'>
                 <PrisonEntrance />

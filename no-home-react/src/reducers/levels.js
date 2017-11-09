@@ -20,3 +20,5 @@ const levelReducer = (state = levelDefaultState, action) => {
     }
 
 }
+
+export default levelReducer;

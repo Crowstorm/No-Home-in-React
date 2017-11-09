@@ -7,15 +7,25 @@ import registerServiceWorker from './registerServiceWorker';
 import configureStore from './store/configureStore'
 import {setLevel} from './actions/levels'
 
+import { Provider } from 'react-redux'
+
+
 const store = configureStore();
 
 
-//store.dispatch(setLon(30));
+console.log(store.getState())
 
 setTimeout(() =>{
-store.dispatch(setLevel("boze"));
+store.dispatch(setLevel("second"));
+console.log(store.getState())
 }
 , 3000)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const jsx = (
+    <Provider store={store}>
+        <App />
+    </Provider>
+)
+
+ReactDOM.render(jsx, document.getElementById('root'));
 registerServiceWorker();
