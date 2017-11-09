@@ -9,6 +9,7 @@ class LevelTwo extends React.Component{
         return(
             <div className='levels'>
                 <PrisonEntrance />
+                <button> click change level </button>
             </div>
         )
     }

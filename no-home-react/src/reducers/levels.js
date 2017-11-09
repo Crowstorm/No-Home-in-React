@@ -6,10 +6,15 @@ const levelDefaultState = {
 const levelReducer = (state = levelDefaultState, action) => {
     switch (action.type) {
         case 'SET_LEVEL':
-            return [
+            return {
                 ...state,
-                //action.placeholder
-            ]
+                level: action.levelName
+            }
+        case 'SET_SUBLEVEL':
+            return{
+                ...state,
+                sublevel: action.sublevelName
+            }
         default:
             return state;
     }
