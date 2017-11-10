@@ -7,18 +7,34 @@ import { connect } from 'react-redux'
 import LevelTwo from './level2/level2'
 
 class LevelRenderer extends React.Component {
-    
-    render() {
-        console.log('store', this.props)
+
+    renderek(){
         let levelik = null;
         if (this.props.level === "second") {
-            levelik = <LevelTwo level={this.state.level} />
+            levelik = <LevelTwo level={this.props.level} />
         } else {
             levelik = 'xD'
         }
+
+        return levelik;
+    }
+
+    render() {
+        console.log('store', this.props.level)
+  
+
+        const renderowanie = (this.props.level) ? this.renderek() : notRendered()
+
+        function notRendered() {
+            return 'Not rendered yet'
+        }
+
+
+
+
         return (
             <div>
-                {levelik}
+                {renderowanie}
             </div>
         )
     }
