@@ -8,22 +8,22 @@ import LevelTwo from './level2/level2'
 
 class LevelRenderer extends React.Component {
 
-    renderek(){
-        let levelik = null;
-        if (this.props.level === "second") {
-            levelik = <LevelTwo level={this.props.level} />
+    renderLevel(){
+        let currentLevel = null;
+        if (this.props.level.level === "second") {
+            currentLevel = <LevelTwo level={this.props.level} />
         } else {
-            levelik = 'xD'
+            currentLevel = 'No level'
         }
 
-        return levelik;
+        return currentLevel;
     }
 
     render() {
         console.log('store', this.props.level)
   
 
-        const renderowanie = (this.props.level) ? this.renderek() : notRendered()
+        let renderLevelConst = (this.props.level) ? this.renderLevel() : notRendered()
 
         function notRendered() {
             return 'Not rendered yet'
@@ -34,7 +34,7 @@ class LevelRenderer extends React.Component {
 
         return (
             <div>
-                {renderowanie}
+                {renderLevelConst}
             </div>
         )
     }
