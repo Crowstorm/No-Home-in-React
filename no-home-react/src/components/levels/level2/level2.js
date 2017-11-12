@@ -1,7 +1,16 @@
 import React from 'react';
 import PrisonEntrance from './subscreens/entrance'
 
+import { connect } from 'react-redux'
+
+import {setLevel} from '../../../actions/levels'
+
 class LevelTwo extends React.Component{
+
+    changeLevel(){ 
+        this.props.dispatch(setLevel('xD'));   
+        console.log('zmiana', this.props.level)    
+    }
 
     render(){
         // console.log(this.props);
@@ -9,10 +18,16 @@ class LevelTwo extends React.Component{
         return(
             <div className='levels'>
                 <PrisonEntrance />
-                <button> click change level </button>
+                <button onClick={()=>this.changeLevel()}> click change level </button>
             </div>
         )
     }
 }
 
-export default LevelTwo;
+const mapStateToProps = (state) => {
+    return {
+        level: state.level
+    }
+}
+
+export default connect(mapStateToProps)(LevelTwo);
