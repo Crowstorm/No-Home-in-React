@@ -13,12 +13,10 @@ class LevelTwo extends React.Component{
     }
 
     render(){
-        // console.log(this.props);
-        // console.log(this.props.level);
         return(
             <div className='levels'>
                 <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
-                <button onClick={()=>this.changeSublevel('xD')}> click change level </button>
+
             </div>
         )
     }

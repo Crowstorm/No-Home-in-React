@@ -6,7 +6,7 @@ export default class PrisonEntrance extends React.Component{
         const changeSublevel = this.props.changeSublevel
         return(
             <div id="prisonEntrance">
-                <img id="down_entrance" src={require("../../../../assets/down.png")} onClick={()=>changeSublevel('dol')}/>
+                <img className="down" src={require("../../../../assets/down.png")} onClick={()=>changeSublevel('dol')} alt=""/>
             </div>
 
         )

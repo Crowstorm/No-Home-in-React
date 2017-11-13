@@ -4,9 +4,3 @@
     height: 100vh;
 }
 
-#down_entrance {
-	display: inline-block;
-	position: absolute;
-    top: 85%;
-    right: 39.5%;
-}
