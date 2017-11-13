@@ -21,16 +21,11 @@ class LevelRenderer extends React.Component {
 
     render() {
         console.log('store', this.props.level)
-  
-
         let renderLevelConst = (this.props.level) ? this.renderLevel() : notRendered()
 
         function notRendered() {
             return 'Not rendered yet'
         }
-
-
-
 
         return (
             <div>

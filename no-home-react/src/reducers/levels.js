@@ -1,5 +1,5 @@
 const levelDefaultState = {
-    level: "first",
+    level: "second",
     sublevel: "1.splash"
 }
 

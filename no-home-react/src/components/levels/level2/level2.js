@@ -3,13 +3,13 @@ import PrisonEntrance from './subscreens/entrance'
 
 import { connect } from 'react-redux'
 
-import {setLevel} from '../../../actions/levels'
+import {setSublevel} from '../../../actions/levels'
 
 class LevelTwo extends React.Component{
 
-    changeLevel(){ 
-        this.props.dispatch(setLevel('xD'));   
-        console.log('zmiana', this.props.level)    
+    changeSublevel(name){ 
+        this.props.dispatch(setSublevel(name));   
+        //console.log('zmiana', this.props.level.sublevel);
     }
 
     render(){
@@ -17,8 +17,8 @@ class LevelTwo extends React.Component{
         // console.log(this.props.level);
         return(
             <div className='levels'>
-                <PrisonEntrance />
-                <button onClick={()=>this.changeLevel()}> click change level </button>
+                <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
+                <button onClick={()=>this.changeSublevel('xD')}> click change level </button>
             </div>
         )
     }
