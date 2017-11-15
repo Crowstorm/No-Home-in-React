@@ -1,6 +1,6 @@
 const levelDefaultState = {
     level: "second",
-    sublevel: "1.splash"
+    sublevel: "Prison Entrance"
 }
 
 const levelReducer = (state = levelDefaultState, action) => {

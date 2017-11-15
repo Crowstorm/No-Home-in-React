@@ -1,5 +1,6 @@
 import React from 'react';
 import PrisonEntrance from './subscreens/entrance'
+import LockedDoors from './subscreens/lockedDoors'
 
 import { connect } from 'react-redux'
 
@@ -12,10 +13,26 @@ class LevelTwo extends React.Component{
         //console.log('zmiana', this.props.level.sublevel);
     }
 
+    renderSublevel(){
+        let currentSublevel = null;
+        if (this.props.level.sublevel === "Prison Entrance") {
+            currentSublevel = <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
+        } else if (this.props.level.sublevel === "Locked Doors"){
+            currentSublevel = <LockedDoors />
+        } else {
+            currentSublevel = 'No level'
+        }
+
+        return currentSublevel;
+    }
+
     render(){
+
+        let sublevelRenderer = this.renderSublevel();
         return(
             <div className='levels'>
-                <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
+                {/* <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/> */}
+                {sublevelRenderer}
 
             </div>
         )
