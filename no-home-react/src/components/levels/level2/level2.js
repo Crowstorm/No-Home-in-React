@@ -18,7 +18,7 @@ class LevelTwo extends React.Component{
         if (this.props.level.sublevel === "Prison Entrance") {
             currentSublevel = <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
         } else if (this.props.level.sublevel === "Locked Doors"){
-            currentSublevel = <LockedDoors />
+            currentSublevel = <LockedDoors changeSublevel={this.changeSublevel.bind(this)}/>
         } else {
             currentSublevel = 'No level'
         }
