@@ -4,6 +4,8 @@ import React from 'react';
 import PrisonEntrance from './subscreens/entrance'
 import LockedDoors from './subscreens/lockedDoors'
 import Corridor from './subscreens/corridor'
+import TortureRoom from './subscreens/tortureRoom'
+import Beds from './subscreens/beds'
 
 import { connect } from 'react-redux'
 
@@ -28,8 +30,14 @@ class LevelTwo extends React.Component {
             case "Corridor":
                 currentSublevel = <Corridor changeSublevel={this.changeSublevel.bind(this)} />
                 break;
+            case 'Torture Room':
+                currentSublevel = <TortureRoom changeSublevel={this.changeSublevel.bind(this)} />;
+                break;
+            case 'Beds':
+                currentSublevel = <Beds changeSublevel={this.changeSublevel.bind(this)} />;
+                break;
             default:
-                console.log("No subelevel rendered");
+                console.log("No sublevel rendered");
                 break;
         }
         return currentSublevel;

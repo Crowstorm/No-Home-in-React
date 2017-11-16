@@ -1,0 +1,27 @@
+#corridor{
+    background-image: url('./assets/corridor.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+#tortureRoomDiv{
+    background-color: red;
+    opacity: 0.5;
+    width: 13%;
+    height: 62%;
+    position: absolute;
+    left: 77%;
+    top: 38%;
+    z-index: 0;
+}
+
+#toBeds{
+    background-color: red;
+    opacity: 0.5;
+    width: 6%;
+    height: 51%;
+    position: absolute;
+    left: 69%;
+    top: 44%;
+    z-index: 0;
+}
