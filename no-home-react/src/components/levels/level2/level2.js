@@ -10,7 +10,6 @@ class LevelTwo extends React.Component{
 
     changeSublevel(name){ 
         this.props.dispatch(setSublevel(name));   
-        //console.log('zmiana', this.props.level.sublevel);
     }
 
     renderSublevel(){
