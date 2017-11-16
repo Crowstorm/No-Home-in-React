@@ -1,38 +1,46 @@
 import React from 'react';
+
+//subelevels
 import PrisonEntrance from './subscreens/entrance'
 import LockedDoors from './subscreens/lockedDoors'
+import Corridor from './subscreens/corridor'
 
 import { connect } from 'react-redux'
 
-import {setSublevel} from '../../../actions/levels'
+import { setSublevel } from '../../../actions/levels'
 
-class LevelTwo extends React.Component{
+class LevelTwo extends React.Component {
 
-    changeSublevel(name){ 
-        this.props.dispatch(setSublevel(name));   
+    changeSublevel(name) {
+        this.props.dispatch(setSublevel(name));
     }
 
-    renderSublevel(){
+    renderSublevel() {
         let currentSublevel = null;
-        if (this.props.level.sublevel === "Prison Entrance") {
-            currentSublevel = <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/>
-        } else if (this.props.level.sublevel === "Locked Doors"){
-            currentSublevel = <LockedDoors changeSublevel={this.changeSublevel.bind(this)}/>
-        } else {
-            currentSublevel = 'No level'
-        }
 
+        switch (this.props.level.sublevel) {
+            case "Prison Entrance":
+                currentSublevel = <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)} />;
+                break;
+            case "Locked Doors":
+                currentSublevel = <LockedDoors changeSublevel={this.changeSublevel.bind(this)} />
+                break;
+            case "Corridor":
+                currentSublevel = <Corridor changeSublevel={this.changeSublevel.bind(this)} />
+                break;
+            default:
+                console.log("No subelevel rendered");
+                break;
+        }
         return currentSublevel;
     }
 
-    render(){
+    render() {
 
         let sublevelRenderer = this.renderSublevel();
-        return(
+        return (
             <div className='levels'>
-                {/* <PrisonEntrance changeSublevel={this.changeSublevel.bind(this)}/> */}
                 {sublevelRenderer}
-
             </div>
         )
     }
