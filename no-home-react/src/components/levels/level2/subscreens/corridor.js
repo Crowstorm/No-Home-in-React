@@ -7,6 +7,9 @@ export default class Entrance extends React.Component {
         const changeSublevel = this.props.changeSublevel
         return (
             <div id='corridor'>
+                <div id='jammedCorridor' />
+                <div id='budgeCorridor' />
+                <div id='evilCorridor' />
                 <div id='toBeds' onClick={() => changeSublevel('Beds')} />
                 <div id='tortureRoomDiv' onClick={() => changeSublevel('Torture Room')}/>
                 <img className="down" src={require("../../../../assets/down.png")} onClick={() => changeSublevel('Prison Entrance')} alt="" />

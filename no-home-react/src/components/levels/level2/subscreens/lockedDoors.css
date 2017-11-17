@@ -5,5 +5,26 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+}
+
+#chainedDoor{
+    background-color: yellow;
+    opacity: 0.5;
+    width: 19%;
+    height: 67%;
+    position: absolute;
+    left: 48%;
+    top: 16%;
+    z-index: 0;
+}
+
+#chainChainedDoor{
+    background-color: green;
+    opacity: 0.5;
+    width: 7%;
+    height: 15%;
+    position: absolute;
+    left: 60%;
+    top: 45%;
+    z-index: 1;
 }

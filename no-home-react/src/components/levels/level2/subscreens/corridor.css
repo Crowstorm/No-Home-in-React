@@ -22,6 +22,39 @@
     height: 51%;
     position: absolute;
     left: 69%;
-    top: 44%;
+    top: 47%;
+    z-index: 0;
+}
+
+#jammedCorridor{
+    background-color: blue;
+    opacity: 0.5;
+    width: 6%;
+    height: 35%;
+    position: absolute;
+    left: 63%;
+    top: 53%;
+    z-index: 0;
+}
+
+#budgeCorridor{
+    background-color: green;
+    opacity: 0.5;
+    width: 7%;
+    height: 68%;
+    position: absolute;
+    left: 38%;
+    top: 28%;
+    z-index: 0;
+}
+
+#evilCorridor{
+    background-color: yellow;
+    opacity: 0.5;
+    width: 12%;
+    height: 51%;
+    position: absolute;
+    left: 51%;
+    top: 32%;
     z-index: 0;
 }

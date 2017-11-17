@@ -31,6 +31,7 @@ body {
 .down{
   display: inline-block;
 	position: absolute;
-    top: 85%;
-    right: 39.5%;
+  top: 85%;
+  right: 39.5%;
+  z-index: 999;
 }

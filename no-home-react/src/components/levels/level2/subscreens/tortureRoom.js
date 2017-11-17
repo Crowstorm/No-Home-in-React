@@ -8,6 +8,7 @@ export default class TortureRoom extends React.Component {
         
         return (
             <div id='tortureRoom'>
+                <div id='tortureChair' />
                 <img className="down" src={require("../../../../assets/down.png")} onClick={() => changeSublevel('Corridor')} alt="" />
             </div>
         )
