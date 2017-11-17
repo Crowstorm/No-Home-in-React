@@ -3,6 +3,38 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
     height: 100vh;
+}
+
+#rightBed{
+    background-color: blue;
+    opacity: 0.5;
+    width: 17%;
+    height: 18%;
+    position: absolute;
+    left: 64%;
+    top: 73%;
+    z-index: 1;
+}
+
+#leftBed{
+    background-color: green;
+    opacity: 0.5;
+    width: 19%;
+    height: 22%;
+    position: absolute;
+    left: 32%;
+    top: 73%;
+    z-index: 0;
+}
+
+#boltcutters{
+    background-color: yellow;
+    opacity: 0.5;
+    width: 8%;
+    height: 12%;
+    position: absolute;
+    left: 58%;
+    top: 66%;
+    z-index: 0;
 }
