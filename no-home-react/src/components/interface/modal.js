@@ -4,11 +4,11 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 
-import {setModal} from '../../actions/levels'
+import {setModalState} from '../../actions/modal'
 
 class Modal extends React.Component{
     handleCloseModal(){
-        this.props.dispatch(setModal(false));
+        this.props.dispatch(setModalState(false));
     }
 
     renderModalText() {
@@ -16,6 +16,12 @@ class Modal extends React.Component{
         switch (this.props.modal.content) {
             case "Jammed":
                 currentModal = "The lock's jammed";
+                break;
+            case "Budge":
+                currentModal = "It won't budge";
+                break;
+            case "Evil":
+                currentModal = "There is no way I'm going there. I can feel something wicked lurking in the shadows";
                 break;
             default:
                 console.log("No modal");

@@ -8,18 +8,22 @@ import LevelTwo from './level2/level2'
 
 import Modal from '../interface/modal'
 
-import {setModal} from '../../actions/levels'
+import {setModalState, setModalContent} from '../../actions/modal'
 
 class LevelRenderer extends React.Component {
 
     handleOpenModal(){
-        this.props.dispatch(setModal(true));
+        this.props.dispatch(setModalState(true));
+    }
+
+    setModalContent(content){
+        this.props.dispatch(setModalContent(content));
     }
 
     renderLevel(){
         let currentLevel = null;
         if (this.props.level.level === "second") {
-            currentLevel = <LevelTwo level={this.props.level} handleOpenModal={this.handleOpenModal.bind(this)}/>
+            currentLevel = <LevelTwo level={this.props.level} handleOpenModal={this.handleOpenModal.bind(this)} setModalContent={this.setModalContent.bind(this)}/>
         } else {
             currentLevel = 'No level'
         }
@@ -29,7 +33,7 @@ class LevelRenderer extends React.Component {
 
     renderModal(){
         let modalOpen = null;
-        if(this.props.level.modal === true){
+        if(this.props.modal.modal === true){
             modalOpen = <Modal />
         }
 
@@ -57,7 +61,8 @@ class LevelRenderer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        level: state.level
+        level: state.level,
+        modal: state.modal
     }
 }
 

@@ -13,7 +13,3 @@ export const setSublevel = (sublevelName) => ({
 
 //modal
 
-export const setModal = (modalState) => ({
-    type: 'MODAL',
-    modalState
-})

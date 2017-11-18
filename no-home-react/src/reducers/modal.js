@@ -10,6 +10,11 @@ const modalReducer = (state = modalDefaultState, action) => {
                 ...state,
                 content: action.content
             }
+        case 'SET_MODAL_STATE':
+            return{
+                ...state,
+                modal: action.modalState
+            }
         default:
             return state;
     }
