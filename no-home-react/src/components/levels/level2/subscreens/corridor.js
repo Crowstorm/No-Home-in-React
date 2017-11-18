@@ -9,18 +9,19 @@ import './corridor.css';
 
 class Corridor extends React.Component {
 
-    handleOpenModal(){
-        console.log(this.props.level);
-        this.props.dispatch(setModal(!this.props.level.modal));
-    }
+    // handleOpenModal(){
+    //     console.log(this.props.level);
+    //     this.props.dispatch(setModal(true));
+    // }
 
     render() {
+        console.log(this.props);
         const changeSublevel = this.props.changeSublevel;
-
+        const handleOpenModal = this.props.handleOpenModal;
 
         return (
             <div id='corridor'>
-                <div id='jammedCorridor' onClick={this.handleOpenModal.bind(this)}></div>
+                <div id='jammedCorridor' onClick={() => handleOpenModal()}></div>
                 <div id='budgeCorridor' />
                 <div id='evilCorridor' />
                 <div id='toBeds' onClick={() => changeSublevel('Beds')} />

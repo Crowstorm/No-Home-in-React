@@ -8,12 +8,19 @@ import LevelTwo from './level2/level2'
 
 import Modal from '../interface/modal'
 
+import {setModal} from '../../actions/levels'
+
 class LevelRenderer extends React.Component {
+
+    handleOpenModal(){
+        console.log(this.props.level);
+        this.props.dispatch(setModal(true));
+    }
 
     renderLevel(){
         let currentLevel = null;
         if (this.props.level.level === "second") {
-            currentLevel = <LevelTwo level={this.props.level} />
+            currentLevel = <LevelTwo level={this.props.level} handleOpenModal={this.handleOpenModal.bind(this)}/>
         } else {
             currentLevel = 'No level'
         }
