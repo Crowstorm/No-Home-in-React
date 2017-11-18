@@ -13,7 +13,6 @@ import {setModal} from '../../actions/levels'
 class LevelRenderer extends React.Component {
 
     handleOpenModal(){
-        console.log(this.props.level);
         this.props.dispatch(setModal(true));
     }
 

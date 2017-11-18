@@ -10,10 +10,25 @@ class Modal extends React.Component{
     handleCloseModal(){
         this.props.dispatch(setModal(false));
     }
+
+    renderModalText() {
+        let currentModal = null;
+        switch (this.props.modal.content) {
+            case "Jammed":
+                currentModal = "The lock's jammed";
+                break;
+            default:
+                console.log("No modal");
+                break;
+        }
+        return currentModal;
+    }
     render(){
+        let modalTextRenderer = this.renderModalText();
         return(
-            <div className='Modal'>test
-            <button onClick={this.handleCloseModal.bind(this)}> close </button>
+            <div className='Modal'>
+                <p>{modalTextRenderer}</p>
+                <button onClick={this.handleCloseModal.bind(this)}> close </button>
             </div>
         )
     }
@@ -21,7 +36,8 @@ class Modal extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        level: state.level
+        level: state.level,
+        modal: state.modal
     }
 }
 
