@@ -1,5 +1,5 @@
 const modalDefaultState = {
-    modal: false,
+    modalVisibility: false,
     content: null
 }
 
@@ -13,7 +13,7 @@ const modalReducer = (state = modalDefaultState, action) => {
         case 'SET_MODAL_STATE':
             return{
                 ...state,
-                modal: action.modalState
+                modalVisibility: action.modalVisibility
             }
         default:
             return state;

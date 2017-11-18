@@ -33,7 +33,7 @@ class LevelRenderer extends React.Component {
 
     renderModal(){
         let modalOpen = null;
-        if(this.props.modal.modal === true){
+        if(this.props.modal.modalVisibility === true){
             modalOpen = <Modal />
         }
 

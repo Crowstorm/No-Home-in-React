@@ -4,7 +4,7 @@ export const setModalContent = (content) => ({
     content
 })
 
-export const setModalState = (modalState) => ({
+export const setModalState = (modalVisibility) => ({
     type: 'SET_MODAL_STATE',
-    modalState
+    modalVisibility
 })
