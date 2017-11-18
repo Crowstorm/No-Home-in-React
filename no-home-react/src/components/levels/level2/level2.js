@@ -37,7 +37,7 @@ class LevelTwo extends React.Component {
                 currentSublevel = <TortureRoom changeSublevel={this.changeSublevel.bind(this)} />;
                 break;
             case 'Beds':
-                currentSublevel = <Beds changeSublevel={this.changeSublevel.bind(this)} />;
+                currentSublevel = <Beds changeSublevel={this.changeSublevel.bind(this)} handleOpenModal={handleOpenModal} setModalContent={setModalContent}/>;
                 break;
             default:
                 console.log("No sublevel rendered");

@@ -23,6 +23,9 @@ class Modal extends React.Component{
             case "Evil":
                 currentModal = "There is no way I'm going there. I can feel something wicked lurking in the shadows";
                 break;
+            case "Empty":
+                currentModal = "It's empty";
+                break;
             default:
                 console.log("No modal");
                 break;
