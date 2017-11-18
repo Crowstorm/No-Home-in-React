@@ -1,51 +1,26 @@
 import React from 'react';
-import ReactModal from 'react-modal';
+import { connect } from 'react-redux'
+
+import {setModal} from '../../../../actions/levels'
+
 
 import './corridor.css';
 
 
-export default class Entrance extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            showModal: false
-        };
+class Corridor extends React.Component {
 
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
-    }
-
-    handleOpenModal() {
-        this.setState({ showModal: true });
-        console.log('clicked')
-    }
-
-    handleCloseModal() {
-        this.setState({ showModal: false });
+    handleOpenModal(){
+        console.log(this.props.level);
+        this.props.dispatch(setModal(!this.props.level.modal));
     }
 
     render() {
         const changeSublevel = this.props.changeSublevel;
 
-        const test = <p> shit </p>;
 
         return (
             <div id='corridor'>
-                <div id='jammedCorridor' onClick={this.handleOpenModal}></div>
-                    <ReactModal
-                        isOpen={this.state.showModal}
-                        contentLabel="onRequestClose Example"
-                        onRequestClose={this.handleCloseModal}
-                        className="Modal"
-                        overlayClassName="Overlay"
-                        shouldCloseOnOverlayClick={true}
-                    >
-                        {/* <p>The lock's jammed</p> */}
-                        {test}
-                        <button onClick={this.handleCloseModal}>Close</button>
-                    </ReactModal>
-                
-
+                <div id='jammedCorridor' onClick={this.handleOpenModal.bind(this)}></div>
                 <div id='budgeCorridor' />
                 <div id='evilCorridor' />
                 <div id='toBeds' onClick={() => changeSublevel('Beds')} />
@@ -56,3 +31,10 @@ export default class Entrance extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        level: state.level
+    }
+}
+
+export default connect(mapStateToProps)(Corridor);
