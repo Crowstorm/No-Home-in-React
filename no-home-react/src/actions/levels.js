@@ -10,3 +10,10 @@ export const setSublevel = (sublevelName) => ({
     type: 'SET_SUBLEVEL',
     sublevelName
 })
+
+//modal
+
+export const setModal = (modalState) => ({
+    type: 'MODAL',
+    modalState
+})

@@ -1,6 +1,7 @@
 const levelDefaultState = {
     level: "second",
-    sublevel: "Prison Entrance"
+    sublevel: "Prison Entrance",
+    modal: true
 }
 
 const levelReducer = (state = levelDefaultState, action) => {
@@ -14,6 +15,11 @@ const levelReducer = (state = levelDefaultState, action) => {
             return{
                 ...state,
                 sublevel: action.sublevelName
+            }
+        case 'MODAL':
+            return{
+                ...state,
+                modal: action.modalState
             }
         default:
             return state;

@@ -6,6 +6,9 @@ import Interface from './components/interface/interface'
 //levels
 import LevelRenderer from './components/levels/levelRenderer';
 
+//modals
+import Modal from './components/interface/modal'
+
 class App extends Component {
   render() {
     return (
