@@ -13,7 +13,8 @@ body {
   float: left;
   outline: 2px solid rgba(190, 191, 193, 0.77);
   border: 3px solid rgba(49, 55, 58, 0.91);
-  
+  background-color: black;
+  color: white;
 }
 
 .Modal {
@@ -34,6 +35,16 @@ body {
   z-index: 1111;
 }
 
+.ghost-button {
+  display: inline-block;
+  width: 5em;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
 
 
 /* Levels */

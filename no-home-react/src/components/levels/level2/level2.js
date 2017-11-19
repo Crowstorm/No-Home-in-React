@@ -22,6 +22,7 @@ class LevelTwo extends React.Component {
         let currentSublevel = null;
         const handleOpenModal = this.props.handleOpenModal;
         const setModalContent = this.props.setModalContent;
+        const handlePickup = this.props.handlePickup;
 
         switch (this.props.level.sublevel) {
             case "Prison Entrance":
@@ -31,13 +32,13 @@ class LevelTwo extends React.Component {
                 currentSublevel = <LockedDoors changeSublevel={this.changeSublevel.bind(this)} />
                 break;
             case "Corridor":
-                currentSublevel = <Corridor changeSublevel={this.changeSublevel.bind(this)} handleOpenModal={handleOpenModal} setModalContent={setModalContent}/>
+                currentSublevel = <Corridor changeSublevel={this.changeSublevel.bind(this)} handleOpenModal={handleOpenModal} setModalContent={setModalContent} />
                 break;
             case 'Torture Room':
                 currentSublevel = <TortureRoom changeSublevel={this.changeSublevel.bind(this)} />;
                 break;
             case 'Beds':
-                currentSublevel = <Beds changeSublevel={this.changeSublevel.bind(this)} handleOpenModal={handleOpenModal} setModalContent={setModalContent}/>;
+                currentSublevel = <Beds changeSublevel={this.changeSublevel.bind(this)} handleOpenModal={handleOpenModal} setModalContent={setModalContent} handlePickup={handlePickup}/>;
                 break;
             default:
                 console.log("No sublevel rendered");

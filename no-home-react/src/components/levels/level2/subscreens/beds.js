@@ -3,25 +3,19 @@ import './beds.css'
 
 import {connect} from 'react-redux';
 
-import { pickUp } from '../../../../actions/inventory';
-
 class Beds extends React.Component{
-    handlePickup(item, bool){
-        console.log('pickuop');
-        this.props.dispatch(pickUp(item, bool));
-        console.log(this.props.inventory)
-    }
 
     render(){
         const changeSublevel = this.props.changeSublevel
         const handleOpenModal = this.props.handleOpenModal;
         const setModalContent = this.props.setModalContent;
+        const handlePickup = this.props.handlePickup;
 
         return(
             <div id='beds'>
                 <div id='leftBed' onClick={() => {setModalContent("Empty"); handleOpenModal()}}/>
                 <div id='rightBed' onClick={() => {setModalContent("Empty"); handleOpenModal()}}/>
-                <div id='boltcutters' onClick={() => this.handlePickup('boltcutters', true) }/>
+                <div id='boltcutters' onClick={() => handlePickup('boltcutters', true) }/>
                 
                 <img className="down" src={require("../../../../assets/down.png")} onClick={() => changeSublevel('Corridor')} alt="" />
             </div>

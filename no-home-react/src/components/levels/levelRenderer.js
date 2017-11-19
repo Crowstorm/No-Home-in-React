@@ -9,6 +9,7 @@ import LevelTwo from './level2/level2'
 import Modal from '../interface/modal'
 
 import {setModalState, setModalContent} from '../../actions/modal'
+import {pickUp} from '../../actions/inventory'
 
 class LevelRenderer extends React.Component {
 
@@ -20,10 +21,15 @@ class LevelRenderer extends React.Component {
         this.props.dispatch(setModalContent(content));
     }
 
+    handlePickup(item, bool){
+        this.props.dispatch(pickUp(item, bool));
+        console.log(this.props.inventory)
+    }
+
     renderLevel(){
         let currentLevel = null;
         if (this.props.level.level === "second") {
-            currentLevel = <LevelTwo level={this.props.level} handleOpenModal={this.handleOpenModal.bind(this)} setModalContent={this.setModalContent.bind(this)}/>
+            currentLevel = <LevelTwo level={this.props.level} handleOpenModal={this.handleOpenModal.bind(this)} setModalContent={this.setModalContent.bind(this)} handlePickup={this.handlePickup.bind(this)}/>
         } else {
             currentLevel = 'No level'
         }

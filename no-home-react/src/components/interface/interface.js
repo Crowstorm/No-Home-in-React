@@ -4,8 +4,18 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 class Interface extends React.Component{
+
+    inventoryItemRender(){
+        let inventoryItem = null;
+        if(this.props.inventory.items.boltcutters){
+            inventoryItem = <a className="ghost-button items" href="#">Boltcutters</a>
+        }
+        return inventoryItem;
+    }
+
     render(){
-        
+        let inventoryItemRenderer = this.inventoryItemRender();
+
         return(
             <div className='interface'>
                 <div className='levelName'>
@@ -15,7 +25,8 @@ class Interface extends React.Component{
 
                 <div className='inventory'>
                     Inventory
-                    <p>{this.props.inventory.items.boltcutters.toString()}</p>
+                    {/* <p>{this.props.inventory.items.boltcutters.toString()}</p> */}
+                    {inventoryItemRenderer}
                 </div>
             </div>            
         )

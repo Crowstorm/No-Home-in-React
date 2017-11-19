@@ -1,6 +1,7 @@
 const inventoryDefaultState = {
     items: {
-        boltcutters: false
+        boltcutters: false,
+        vhs: false
     }
 }
 
