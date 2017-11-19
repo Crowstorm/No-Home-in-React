@@ -1,4 +1,5 @@
-export const pickupBoltcutters = (isPickedUp) => ({
-    type: 'PICK_UP_BOLTCUTTERS',
+export const pickUp = (item, isPickedUp) => ({
+    type: 'PICK_UP',
+    item,
     isPickedUp
 })

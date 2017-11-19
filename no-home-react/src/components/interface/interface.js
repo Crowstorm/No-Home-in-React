@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 class Interface extends React.Component{
     render(){
+        
         return(
             <div className='interface'>
                 <div className='levelName'>
@@ -14,6 +15,7 @@ class Interface extends React.Component{
 
                 <div className='inventory'>
                     Inventory
+                    <p>{this.props.inventory.items.boltcutters.toString()}</p>
                 </div>
             </div>            
         )
@@ -22,7 +24,8 @@ class Interface extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        level: state.level
+        level: state.level,
+        inventory: state.inventory
     }
 }
 
