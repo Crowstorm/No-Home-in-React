@@ -6,9 +6,9 @@ import {connect} from 'react-redux';
 import { pickupBoltcutters } from '../../../../actions/inventory';
 
 class Beds extends React.Component{
-    handlePickup(isPickedUp){
+    handlePickup(){
         console.log('pickuop');
-        this.props.dispatch(pickupBoltcutters(isPickedUp));
+        this.props.dispatch(pickupBoltcutters(true));
         console.log(this.props.inventory)
     }
 

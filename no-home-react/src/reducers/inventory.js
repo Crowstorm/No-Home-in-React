@@ -7,11 +7,12 @@ const inventoryDefaultState = {
 const inventoryReducer = (state = inventoryDefaultState, action) => {
     switch (action.type) {
         case 'PICK_UP_BOLTCUTTERS':
+        console.log(action)
             return {
                 ...state,
                 items: {
-                    // ...state.items,
-                    boltcutters: action.IsPickedUp
+                    ...state.items,
+                    boltcutters: action.isPickedUp
                 }
             }
         default:
