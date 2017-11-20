@@ -3,3 +3,9 @@ export const pickUp = (item, isPickedUp) => ({
     item,
     isPickedUp
 })
+
+export const activate = (item, isActive) => ({
+    type: 'ACTIVE',
+    item,
+    isActive
+})

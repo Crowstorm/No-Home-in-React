@@ -3,12 +3,24 @@ import React from 'react';
 //connect do redux
 import { connect } from 'react-redux'
 
+import {activate} from '../../actions/inventory'
+
 class Interface extends React.Component{
+
+    handleBoltcuttersClicked(){
+        this.props.dispatch(activate('boltcutters', true));
+        console.log('klik');
+        setTimeout(() => console.log(this.props.inventory), 10)
+        
+        window.onclick((e) => {
+            console.log(e.target);
+        })
+    }
 
     inventoryItemRender(){
         let inventoryItem = null;
         if(this.props.inventory.items.boltcutters){
-            inventoryItem = <a className="ghost-button items" href="#">Boltcutters</a>
+            inventoryItem = <a className="ghost-button items" href="#" onClick={() => this.handleBoltcuttersClicked()}>Boltcutters</a>
         }
         return inventoryItem;
 
@@ -37,7 +49,7 @@ class Interface extends React.Component{
 
                 <div className='inventory'>
                     Inventory
-                    <p>{this.props.inventory.items.boltcutters.toString()}</p> 
+                    {/* <p>{this.props.inventory.items.boltcutters.toString()}</p>  */}
                     {inventoryItemRenderer}
                 </div>
             </div>            
