@@ -23,7 +23,7 @@ class LevelRenderer extends React.Component {
 
     handlePickup(item, bool){
         this.props.dispatch(pickUp(item, bool));
-        console.log(this.props.inventory)
+        console.log(this.props.inventory);
     }
 
     renderLevel(){
@@ -68,7 +68,8 @@ class LevelRenderer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         level: state.level,
-        modal: state.modal
+        modal: state.modal,
+        inventory: state.inventory
     }
 }
 
