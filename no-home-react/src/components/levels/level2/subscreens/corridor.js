@@ -15,12 +15,7 @@ class Corridor extends React.Component {
     playSound(){
         const jammed = document.getElementById('jammed');
         console.log(jammed)
-        // jammed.setAttribute("preload", "auto");
-        // jammed.autobuffer = true;
-        // jammed.load();
-         jammed.play();
-     
-        
+        jammed.play();
     }
 
     render() {
