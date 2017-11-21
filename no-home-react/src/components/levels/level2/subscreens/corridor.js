@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 import './corridor.css';
 
-import jammed from './assets/jammed.mp3'
+import jammedSoundPath from './assets/jammed.mp3'
+import budgeSoundPath from './assets/budge.mp3'
 
 
 class Corridor extends React.Component {
@@ -12,10 +13,8 @@ class Corridor extends React.Component {
     //     console.log(this.props.level);
     //     this.props.dispatch(setModal(true));
     // }
-    playSound(){
-        const jammed = document.getElementById('jammed');
-        console.log(jammed)
-        jammed.play();
+    playSound(soundName){
+        this.refs[soundName].play();
     }
 
     render() {
@@ -27,10 +26,10 @@ class Corridor extends React.Component {
 
         return (
             <div id='corridor'>
-            	<audio id="jammed" src={jammed} type="audio/mpeg"></audio>
-	            <audio id="budge" src="./assets/budge.mp3"></audio>
-                <div id='jammedCorridor' onClick={() => {setModalContent("Jammed"); handleOpenModal(); this.playSound()}}></div>
-                <div id='budgeCorridor' onClick={() => {setModalContent("Budge"); handleOpenModal()}}/>
+            	<audio ref="jammed" src={jammedSoundPath} type="audio/mpeg"></audio>
+	            <audio ref="budge" src={budgeSoundPath}></audio>
+                <div id='jammedCorridor' onClick={() => {setModalContent("Jammed"); handleOpenModal(); this.playSound('jammed')}}></div>
+                <div id='budgeCorridor' onClick={() => {setModalContent("Budge"); handleOpenModal(); this.playSound('budge')}}/>
                 <div id='evilCorridor' onClick={() => {setModalContent("Evil"); handleOpenModal()}} />
                 <div id='toBeds' onClick={() => changeSublevel('Beds')} />
                 <div id='tortureRoomDiv' onClick={() => changeSublevel('Torture Room')} />
