@@ -7,14 +7,15 @@ import {activate} from '../../actions/inventory'
 
 class Interface extends React.Component{
 
+ 
+
     handleBoltcuttersClicked(){
         this.props.dispatch(activate('boltcutters', true));
         console.log('klik');
         setTimeout(() => console.log(this.props.inventory), 10)
-        
-        window.onclick((e) => {
-            console.log(e.target);
-        })
+     
+           
+       
     }
 
     inventoryItemRender(){

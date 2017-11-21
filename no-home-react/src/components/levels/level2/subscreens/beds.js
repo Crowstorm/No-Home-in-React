@@ -4,18 +4,21 @@ import './beds.css'
 import {connect} from 'react-redux';
 
 class Beds extends React.Component{
-
+    changeBackground(){
+        document.getElementById('beds').style.backgroundImage = "url('./assets/bedsB.jpg')";
+    }
     render(){
         const changeSublevel = this.props.changeSublevel
         const handleOpenModal = this.props.handleOpenModal;
         const setModalContent = this.props.setModalContent;
         const handlePickup = this.props.handlePickup;
+     
 
         return(
             <div id='beds'>
                 <div id='leftBed' onClick={() => {setModalContent("Empty"); handleOpenModal()}}/>
                 <div id='rightBed' onClick={() => {setModalContent("Empty"); handleOpenModal()}}/>
-                <div id='boltcutters' onClick={() => handlePickup('boltcutters', true) }/>
+                <div id='boltcutters' onClick={() => {handlePickup('boltcutters', true); this.changeBackground() }}/>
                 
                 <img className="down" src={require("../../../../assets/down.png")} onClick={() => changeSublevel('Corridor')} alt="" />
             </div>

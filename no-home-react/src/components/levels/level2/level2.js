@@ -17,6 +17,25 @@ class LevelTwo extends React.Component {
         this.props.dispatch(setSublevel(name));
     }
 
+    test2(){
+        console.log('xd');
+        var last_clicked;
+        window.onclick = function(e){
+            last_clicked = e.target;
+            console.log(last_clicked.id);
+            if(last_clicked.id === 'chainChainedDoor'){
+                console.log('szok')
+            }
+        }
+    }
+
+    test(){
+        console.log(this.props.inventory.activeItem.boltcutters)
+        if(this.props.inventory.activeItem.boltcutters){
+            this.test2();
+        }
+        
+    }
 
     renderSublevel() {
         let currentSublevel = null;
@@ -49,7 +68,7 @@ class LevelTwo extends React.Component {
 
     render() {
 
-       
+       this.test();
 
         let sublevelRenderer = this.renderSublevel();
         return (
@@ -62,7 +81,8 @@ class LevelTwo extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        level: state.level
+        level: state.level,
+        inventory: state.inventory
     }
 }
 
