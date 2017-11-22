@@ -10,6 +10,7 @@ import Beds from './subscreens/beds'
 import { connect } from 'react-redux'
 
 import { setSublevel } from '../../../actions/levels'
+import {activate} from '../../../actions/inventory'
 
 class LevelTwo extends React.Component {
 
@@ -17,25 +18,7 @@ class LevelTwo extends React.Component {
         this.props.dispatch(setSublevel(name));
     }
 
-    test2(){
-        console.log('xd');
-        var last_clicked;
-        window.onclick = function(e){
-            last_clicked = e.target;
-            console.log(last_clicked.id);
-            if(last_clicked.id === 'chainChainedDoor'){
-                console.log('szok')
-            }
-        }
-    }
 
-    test(){
-        console.log(this.props.inventory.activeItem.boltcutters)
-        if(this.props.inventory.activeItem.boltcutters){
-            this.test2();
-        }
-        
-    }
 
     renderSublevel() {
         let currentSublevel = null;
@@ -68,7 +51,7 @@ class LevelTwo extends React.Component {
 
     render() {
 
-       this.test();
+       //this.chainMechanics();
 
         let sublevelRenderer = this.renderSublevel();
         return (

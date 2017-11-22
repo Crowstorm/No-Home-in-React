@@ -7,21 +7,68 @@ import {activate} from '../../actions/inventory'
 
 class Interface extends React.Component{
 
- 
+
+    // chainMechanics(){
+    //     //console.log(this.props.inventory);
+    //    // if(this.props.inventory.activeItem.boltcutters===true){
+    //         //this.test2();
+            
+    //         //sproboj refem
+    //         window.onclick = ((e)=>{
+    //             let clickedElement;
+    //             let count=0;
+    //             clickedElement = e.target;
+    //             // console.log(clickedElement, 'klikniety')
+    //             if(this.props.inventory.activeItem.boltcutters===true){
+    //                 count++;
+                    
+    //                 console.log(clickedElement.id);
+    //                 if(clickedElement.id === 'chainChainedDoor'){
+    //                     alert('you got it');
+    //                     this.props.dispatch(activate('boltcutters', false))
+                        
+    //                 } else if (clickedElement.id !== 'chainChainedDoor' && count ===1)  {
+    //                     count = 0;
+    //                     console.log(count)
+    //                     this.props.dispatch(activate('boltcutters', false));
+    //                     alert('try again')
+    //                     console.log(this.props.inventory.activeItem.boltcutters);
+                        
+    //                 }
+    //             }    
+    //         })
+    // }
+
+    chainMechanics(){
+        let clickedElement;
+        window.onclick = ((e)=>{
+            console.log(clickedElement, 'clickedelement', this.props.inventory.activeItem.boltcutters)
+            if(this.props.inventory.activeItem.boltcutters===true){
+                clickedElement = e.target;
+                if(clickedElement.id === 'chainChainedDoor'){
+                    alert('you got it');
+                    this.props.dispatch(activate('boltcutters', false))
+                } else if(clickedElement.id === 'test'){
+                    console.log('Why wont you cooperate')
+                } else {
+                    this.props.dispatch(activate('boltcutters', false));
+                    alert('try again')
+                    console.log(this.props.inventory.activeItem.boltcutters); 
+                }
+            }
+        })
+    }
 
     handleBoltcuttersClicked(){
         this.props.dispatch(activate('boltcutters', true));
         console.log('klik');
-        setTimeout(() => console.log(this.props.inventory), 10)
-     
-           
-       
+        setTimeout(() => this.chainMechanics(), 100)
     }
 
     inventoryItemRender(){
         let inventoryItem = null;
         if(this.props.inventory.items.boltcutters){
-            inventoryItem = <a className="ghost-button items" href="#" onClick={() => this.handleBoltcuttersClicked()}>Boltcutters</a>
+            inventoryItem = <a className="ghost-button items" href="#" id='test'onClick={() => this.handleBoltcuttersClicked()}>Boltcutters</a>
         }
         return inventoryItem;
 
