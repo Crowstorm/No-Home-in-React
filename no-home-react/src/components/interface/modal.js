@@ -35,6 +35,12 @@ class Modal extends React.Component {
             case "Boltcutters_True":
                 currentModal = "Boltcutters could do the trick";
                 break;
+            case "Cant_Use":
+                currentModal = "Can't use it here";
+                break;
+            case "Chain_Broken":
+                currentModal = "You unlocked the door";
+                break;
             default:
                 console.log("No modal");
                 break;
