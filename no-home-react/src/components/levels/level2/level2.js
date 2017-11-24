@@ -10,7 +10,7 @@ import Beds from './subscreens/beds'
 import { connect } from 'react-redux'
 
 import { setSublevel } from '../../../actions/levels'
-import {activate} from '../../../actions/inventory'
+
 
 class LevelTwo extends React.Component {
 

@@ -22,7 +22,6 @@ class Interface extends React.Component{
                     console.log('Why wont you cooperate')
                 } else {
                     this.props.dispatch(activate('boltcutters', false));
-                    //alert('try again')
                     this.props.dispatch(setModalContent('Cant_Use'));
                     this.props.dispatch(setModalState(true));
                     console.log(this.props.inventory.activeItem.boltcutters); 
@@ -46,9 +45,6 @@ class Interface extends React.Component{
     }
 
     render(){
-        const handleOpenModal = this.props.handleOpenModal;
-        const setModalContent = this.props.setModalContent;
-
         let inventoryItemRenderer = this.inventoryItemRender();
 
         return(
