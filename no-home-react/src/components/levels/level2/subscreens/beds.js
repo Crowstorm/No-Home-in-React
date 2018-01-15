@@ -9,6 +9,7 @@ class Beds extends React.Component{
     changeBackground(locationName, newBackground){
         this.props.dispatch(changeBackground(locationName, newBackground))
     }
+    
     render(){
         // background chwilowy  https://i.imgur.com/4dEp3PM.jpg     //   https://i.imgur.com/I9yz7lT.jpg
         const changeSublevel = this.props.changeSublevel
