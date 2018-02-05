@@ -7,6 +7,14 @@ import {activate} from '../../actions/inventory'
 import { setModalContent, setModalState } from '../../actions/modal';
 
 class Interface extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            
+        }
+
+        
+    }
 
     chainMechanics(){
         let clickedElement;
@@ -39,7 +47,7 @@ class Interface extends React.Component{
     inventoryItemRender(){
         let inventoryItem = null;
         if(this.props.inventory.items.boltcutters){
-            inventoryItem = <a className="ghost-button items" href="#" id='boltcuttersId' onClick={() => this.handleBoltcuttersClicked()}>Boltcutters</a>
+            inventoryItem = <a className={this.props.inventory.activeItem.boltcutters ? "ghost-button items active " : "ghost-button items"} href="#" id='boltcuttersId' onClick={() => this.handleBoltcuttersClicked()}>Boltcutters</a>
         }
         return inventoryItem;
     }

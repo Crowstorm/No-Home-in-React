@@ -50,6 +50,11 @@ body {
 	margin: 3% auto;
 }
 
+.active{
+  border: 1px solid red;
+  color: red;
+}
+
 
 /* Levels */
 
