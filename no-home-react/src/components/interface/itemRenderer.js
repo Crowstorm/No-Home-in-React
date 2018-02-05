@@ -4,39 +4,39 @@ import { connect } from 'react-redux'
 import {activate} from '../../actions/inventory'
 import { setModalContent, setModalState } from '../../actions/modal';
 
+//funkcje
+import {chainMechanics} from './itemMechanics/chainMechanics';
+
 
 class ItemRenderer extends React.Component{
 
-    chainMechanics(){
-        let clickedElement;
-        window.onclick = ((e)=>{
-            console.log(clickedElement, 'clickedelement', this.props.inventory.activeItem.boltcutters)
-            if(this.props.inventory.activeItem.boltcutters===true){
-                clickedElement = e.target;
-                if(clickedElement.id === 'chainChainedDoor'){
-                    this.props.dispatch(activate('boltcutters', false))
-                    this.props.dispatch(setModalContent('Chain_Broken'));
-                    this.props.dispatch(setModalState(true));
-                } else if(clickedElement.id === 'boltcuttersId'){
-                    console.log('Why wont you cooperate')
-                } else {
-                    this.props.dispatch(activate('boltcutters', false));
-                    this.props.dispatch(setModalContent('Cant_Use'));
-                    this.props.dispatch(setModalState(true));
-                    console.log(this.props.inventory.activeItem.boltcutters); 
-                }
-            }
-        })
-    }
+    // chainMechanics(){
+    //     let clickedElement;
+    //     window.onclick = ((e)=>{
+    //         console.log(clickedElement, 'clickedelement', this.props.inventory.activeItem.boltcutters)
+    //         if(this.props.inventory.activeItem.boltcutters===true){
+    //             clickedElement = e.target;
+    //             if(clickedElement.id === 'chainChainedDoor'){
+    //                 this.props.dispatch(activate('boltcutters', false))
+    //                 this.props.dispatch(setModalContent('Chain_Broken'));
+    //                 this.props.dispatch(setModalState(true));
+    //             } else if(clickedElement.id === 'boltcuttersId'){
+    //                 console.log('Why wont you cooperate')
+    //             } else {
+    //                 this.props.dispatch(activate('boltcutters', false));
+    //                 this.props.dispatch(setModalContent('Cant_Use'));
+    //                 this.props.dispatch(setModalState(true));
+    //                 console.log(this.props.inventory.activeItem.boltcutters); 
+    //             }
+    //         }
+    //     })
+    // }
 
     handleBoltcuttersClicked(){
         this.props.dispatch(activate('boltcutters', true));
         console.log('klik');
-        setTimeout(() => this.chainMechanics(), 100)
+        setTimeout(() => chainMechanics(this.props), 100)
     }
-
-
-
 
     inventoryItemRender(){
         let inventoryItem = null;
@@ -45,6 +45,7 @@ class ItemRenderer extends React.Component{
         }
         return inventoryItem;
     }
+
     render(){
         let renderItems = this.inventoryItemRender();
         return(
