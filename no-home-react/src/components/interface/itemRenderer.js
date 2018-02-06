@@ -1,42 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
 
 import {activate} from '../../actions/inventory'
 import { setModalContent, setModalState } from '../../actions/modal';
+import inventoryReducer from '../../reducers/inventory';
 
 //funkcje
 import {chainMechanics} from './itemMechanics/chainMechanics';
 
 
 class ItemRenderer extends React.Component{
-
-    // chainMechanics(){
-    //     let clickedElement;
-    //     window.onclick = ((e)=>{
-    //         console.log(clickedElement, 'clickedelement', this.props.inventory.activeItem.boltcutters)
-    //         if(this.props.inventory.activeItem.boltcutters===true){
-    //             clickedElement = e.target;
-    //             if(clickedElement.id === 'chainChainedDoor'){
-    //                 this.props.dispatch(activate('boltcutters', false))
-    //                 this.props.dispatch(setModalContent('Chain_Broken'));
-    //                 this.props.dispatch(setModalState(true));
-    //             } else if(clickedElement.id === 'boltcuttersId'){
-    //                 console.log('Why wont you cooperate')
-    //             } else {
-    //                 this.props.dispatch(activate('boltcutters', false));
-    //                 this.props.dispatch(setModalContent('Cant_Use'));
-    //                 this.props.dispatch(setModalState(true));
-    //                 console.log(this.props.inventory.activeItem.boltcutters); 
-    //             }
-    //         }
-    //     })
+    // componentWillReceiveProps(next) {
+    //     console.log(next);
+    //     this.inventoryItemRender(next);
     // }
-
+    
+    // inventoryItemRender(nextInventory){
+    //         const inventory1 = nextInventory ? nextInventory : this.props.inventory;
+    //         console.log('invento', inventory1)
+    //         let inventoryItem = null;
+    //         if(inventory1.items.boltcutters){
+    //             inventoryItem = <a className={inventory1.activeItem.boltcutters ? "ghost-button items active " : "ghost-button items"} href="#" id='boltcuttersId' onClick={(nextInventory) => this.handleBoltcuttersClicked(nextInventory)}>Boltcutters</a>
+    //         }
+    //         return inventoryItem;
+    // }
+    
     handleBoltcuttersClicked(){
-        this.props.dispatch(activate('boltcutters', true));
-        console.log('klik');
-        setTimeout(() => chainMechanics(this.props), 100)
-    }
+            this.props.activate('boltcutters', true);
+            setTimeout(() => chainMechanics(this.props), 100)
+        }
 
     inventoryItemRender(){
         let inventoryItem = null;
@@ -48,6 +42,7 @@ class ItemRenderer extends React.Component{
 
     render(){
         let renderItems = this.inventoryItemRender();
+        console.log('Nowe propsy: ', this.props)
         return(
             <div>
                 {renderItems}
@@ -63,5 +58,11 @@ const mapStateToProps = (state) => {
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    //dispatch w propsach
+    return(
+        bindActionCreators({activate: activate, setModalState: setModalState, setModalContent: setModalContent }, dispatch)
+    ) 
+  }
 
-export default connect(mapStateToProps)(ItemRenderer);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemRenderer);
